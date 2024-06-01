@@ -23,3 +23,4 @@ public class ProducerController {
         return new ResponseEntity<>("Location updated successfully", HttpStatus.OK);
     }
 }
+

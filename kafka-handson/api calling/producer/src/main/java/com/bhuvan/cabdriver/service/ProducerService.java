@@ -13,13 +13,14 @@ public class ProducerService {
     @Autowired
     private StreamingService streamingService;
     public void updateContent() {
-         streamingService.streamData().forEach(data -> {
-             try {
-                 kafkaTemplate.send(AppConstant.WIKIMEDIA, data);
-                 Thread.sleep(1000);
-             } catch (InterruptedException e) {
-                 throw new RuntimeException(e);
-             }
-         });
+        streamingService.streamData().forEach(data -> {
+            try {
+                kafkaTemplate.send(AppConstant.WIKIMEDIA, data);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 }
+
